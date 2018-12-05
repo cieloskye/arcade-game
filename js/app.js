@@ -1,8 +1,8 @@
 // Enemies our player must avoid
-var Enemy = function() {
-    // Variables applied to each of our instances go here
-
-    this.sprite = 'images/enemy-bug.png';
+var Enemy = function(x, y) {
+  this.x = x;
+  this.y = y;
+  this.sprite = 'images/enemy-bug.png';
 };
 
 // Updates the enemy's position
@@ -18,9 +18,10 @@ Enemy.prototype.render = function() {
 
 
 //Player Class
-var Player = function(){
-
-    this.sprite = 'images/char-boy.png';
+var Player = function(x, y, sprite){
+  this.x = x;
+  this.y = y;
+  this.sprite = sprite;
 
   }
 
@@ -58,5 +59,5 @@ document.addEventListener('keyup', function(e) {
 // Objects
 
 
-const player = new Player();
+const player = new Player(202, 400, 'images/char-princess-girl.png');
 const allEnemies = [];
