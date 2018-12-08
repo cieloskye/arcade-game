@@ -1,8 +1,8 @@
 // Enemies our player must avoid
-var Enemy = function(x, y) {
+var Enemy = function(x, y, sprite) {
   this.x = x;
   this.y = y;
-  this.sprite = 'images/enemy-bug.png';
+  this.sprite = sprite;
 };
 
 // Updates the enemy's position
@@ -60,4 +60,12 @@ document.addEventListener('keyup', function(e) {
 
 
 const player = new Player(202, 400, 'images/char-princess-girl.png');
-const allEnemies = [];
+
+const enemyPosition = [55, 147, 230, 380];
+
+const enemy = new Enemy('images/enemy-bug.png');
+
+//this makes player disappear...
+const allEnemies = enemyPosition.map((y, index) => {
+  return new Enemy((-320 * (index + 1)), y);
+});
