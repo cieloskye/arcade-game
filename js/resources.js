@@ -1,4 +1,4 @@
-/* Resources.js
+                         /* Resources.js
  * This is simply an image loading utility. It eases the process of loading
  * image files so that they can be used within your game. It also includes
  * a simple "caching" layer so it will reuse cached images if you attempt
@@ -31,7 +31,7 @@
     }
 
     /* This is our private image loader function, it is
-     * called by the public image loader function.
+     * called by the public image loader function.       wq                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
      */
     function _load(url) {
         if(resourceCache[url]) {
@@ -50,7 +50,7 @@
                  * so that we can simply return this image if the developer
                  * attempts to load this file in the future.
                  */
-                resourceCache[url] = img;
+                resourceCache[url] = img;   `
 
                 /* Once the image is actually loaded and properly cached,
                  * call all of the onReady() callbacks we have defined.
