@@ -1,49 +1,56 @@
 // Enemies our player must avoid
-var Enemy = function(x, y, sprite) {
-  this.x = x;
-  this.y = y;
-  this.sprite = sprite;
+let Enemy = class {
+    function(x, y, sprite) { 
+    this.x = x;
+    this.y = y;
+    this.sprite = 'images/enemy-bug.png'; 
 };
 
-// Updates the enemy's position
+
+}
+
+// Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
-Enemy.prototype.update = function(dt) {
-
-};
-
-// Draws the enemy on the screen
-Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+Enemy.prototype.update = function(dt) { //Udacity Provided
+    // You should multiply any movement by the dt parameter
+    // which will ensure the game runs at the same speed for
+    // all computers.
 };
 
 
-//Player Class
-var Player = function(x, y, sprite){
-  this.x = x;
-  this.y = y;
-  this.sprite = sprite;
+// Draw the enemy on the screen, required method for game
+Enemy.prototype.render = function() { //Udacity Provided
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y); //Udacity Provided
+}; 
 
-  }
-
-
-Player.prototype.render = function(){
-
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-
-  };
-
-Player.prototype.update = function(dt) {
-
+Enemy.prototype.handleInput = function() { //Udacity Provided
+    // You should multiply any movement by the dt parameter
+    // which will ensure the game runs at the same speed for
+    // all computers.
 };
 
-//Player.prototype.handleInput = function(){
+let Player = class {
+    function(x, y, sprite) { 
+    this.x = x;
+    this.y = y;
+    this.sprite = 'char-horn-girl.png'; 
 
-  //}
+}
+
+// Now write your own player class
+// This class requires an update(), render() and
+// a handleInput() method.
+
+
+// Now instantiate your objects.
+// Place all enemy objects in an array called allEnemies
+// Place the player object in a variable called player
 
 
 
-//Listens for key presses and sends the keys to the Player.handleInput() method.
-document.addEventListener('keyup', function(e) {
+// This listens for key presses and sends the keys to your
+// Player.handleInput() method. You don't need to modify this.
+document.addEventListener('keyup', function(e) { //Udacity Provided
     var allowedKeys = {
         37: 'left',
         38: 'up',
@@ -52,19 +59,4 @@ document.addEventListener('keyup', function(e) {
     };
 
     player.handleInput(allowedKeys[e.keyCode]);
-});
-
-
-// Objects
-
-
-const player = new Player(202, 400, 'images/char-princess-girl.png');
-
-const enemyPosition = [55, 147, 230, 380];
-
-const enemy = new Enemy('images/enemy-bug.png');
-
-//this makes player disappear...
-const allEnemies = enemyPosition.map((y, index) => {
-  return new Enemy((-320 * (index + 1)), y);
 });

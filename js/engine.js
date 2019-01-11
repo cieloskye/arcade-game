@@ -111,11 +111,13 @@ var Engine = (function(global) {
                 'images/stone-block.png',   // Row 1 of 3 of stone
                 'images/stone-block.png',   // Row 2 of 3 of stone
                 'images/stone-block.png',   // Row 3 of 3 of stone
-                'images/grass-block.png',   // Row 1 of 2 of grass
-                'images/grass-block.png'    // Row 2 of 2 of grass
+                'images/grass-block.png',   // Row 1 of 4 of grass
+                'images/grass-block.png'    // Row 2 of 4 of grass
+                'images/grass-block.png'    // Row 3 of 4 of grass
+                'images/grass-block.png'    // Row 4 of 4 of grass
             ],
-            numRows = 6,
-            numCols = 5,
+            numRows = 8,
+            numCols = 7,
             row, col;
 
         // Before drawing, clear existing canvas
@@ -173,9 +175,7 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png',
-        'images/char-pink-girl.png',
-        'images/char-princess-girl.png'
+        'images/char-boy.png'
     ]);
     Resources.onReady(init);
 
