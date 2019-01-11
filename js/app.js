@@ -7,7 +7,7 @@ let Enemy = class {
     }
     // Update the enemy's position, required method for game
     // Parameter: dt, a time delta between ticks
-    update (dt) { //Udacity Provided
+    update (dt) { 
         // You should multiply any movement by the dt parameter
         // which will ensure the game runs at the same speed for
         // all computers.
@@ -21,8 +21,7 @@ let Enemy = class {
         // which will ensure the game runs at the same speed for
         // all computers.
     }
-
-};
+}
 
 
 
@@ -39,10 +38,22 @@ let Player = class {
         this.y = y;
         this.sprite = 'char-horn-girl.png'; 
     }
-    update
-    render
-    handleInput
-
+    // Update the players's position, required method for game
+    // Parameter: dt, a time delta between ticks
+    update (dt) { 
+        // You should multiply any movement by the dt parameter
+        // which will ensure the game runs at the same speed for
+        // all computers.
+        // Draw the enemy on the screen, required method for game
+    }
+    render () { 
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y); 
+    } 
+    handleInput () { 
+        // You should multiply any movement by the dt parameter
+        // which will ensure the game runs at the same speed for
+        // all computers.
+    }
 }
 
 // Now instantiate your objects.
