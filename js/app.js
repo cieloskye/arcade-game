@@ -1,46 +1,49 @@
 // Enemies our player must avoid
 let Enemy = class {
-    function(x, y, sprite) { 
-    this.x = x;
-    this.y = y;
-    this.sprite = 'images/enemy-bug.png'; 
+    contructor (x, y, sprite) { 
+        this.x = x;
+        this.y = y;
+        this.sprite = 'images/enemy-bug.png'; 
+    }
+    // Update the enemy's position, required method for game
+    // Parameter: dt, a time delta between ticks
+    update (dt) { //Udacity Provided
+        // You should multiply any movement by the dt parameter
+        // which will ensure the game runs at the same speed for
+        // all computers.
+        // Draw the enemy on the screen, required method for game
+    }
+    render () { 
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y); 
+    } 
+    handleInput () { 
+        // You should multiply any movement by the dt parameter
+        // which will ensure the game runs at the same speed for
+        // all computers.
+    }
+
 };
 
 
-}
-
-// Update the enemy's position, required method for game
-// Parameter: dt, a time delta between ticks
-Enemy.prototype.update = function(dt) { //Udacity Provided
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
-};
 
 
-// Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function() { //Udacity Provided
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y); //Udacity Provided
-}; 
 
-Enemy.prototype.handleInput = function() { //Udacity Provided
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
-};
+
+
+    
+
 
 let Player = class {
     function(x, y, sprite) { 
-    this.x = x;
-    this.y = y;
-    this.sprite = 'char-horn-girl.png'; 
+        this.x = x;
+        this.y = y;
+        this.sprite = 'char-horn-girl.png'; 
+    }
+    update
+    render
+    handleInput
 
 }
-
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
-
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
