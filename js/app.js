@@ -1,26 +1,3 @@
-// Player, our hero
-class Player {
-    construtor (x, y, sprite) { 
-        this.x = x;
-        this.y = y;
-        this.sprite = 'char-horn-girl.png'; 
-    }
-    render () { 
-        ctx.drawImage(Resources.get(this.sprite), this.x, this.y); 
-    }  
-    update (dt) { 
-        //check collision here
-            // player position ==== ememy position?
-        // game over?
-            //player position === final tile?
-    }
-    handleInput () { 
-        //update x & y according to input
-
-    }
-}
-
-
 // Enemies our player must avoid
 class Enemy {
     contructor (x, y, sprite) { 
@@ -35,7 +12,7 @@ class Enemy {
         /* Parameter: dt, a time delta between ticks - multiply any movement by the dt parameter
         If enemy position != boundry
             increment x by speed * dt
-        else
+        else 
             reset enemy to start position
         */
     }
@@ -45,9 +22,36 @@ class Enemy {
 }
 
 
+// Player, our user
+class User {
+    construtor (x, y, sprite) { 
+        this.x = x;
+        this.y = y;
+        this.sprite = 'char-horn-girl.png'; 
+    }
+    render () { 
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y); 
+    }
+    update (dt) { 
+        //check collision here
+            // player position ==== ememy position?
+        // game over?
+            //player position === final tile?
+    }
+    handleInput () { 
+        //update x & y according to input
+
+    }
+}
+
+
 
 // Instantiate objects.
-const player = new Player();
+const player = new User(202, 400, 'images/char-princess-girl.png');
+
+const enemy = new Enemy('images/enemy-bug.png');
+
+const enemyPosition = [55, 147, 230, 380];
 
 const allEnemies = [];
 
