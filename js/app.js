@@ -1,21 +1,19 @@
 // Player, our hero
 class Player {
-    function(x, y, sprite) { 
+    construtor (x, y, sprite) { 
         this.x = x;
         this.y = y;
         this.sprite = 'char-horn-girl.png'; 
     }
-    // Update the players's position
+    render () { 
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y); 
+    }  
     update (dt) { 
         //check collision here
             // player position ==== ememy position?
         // game over?
             //player position === final tile?
-
     }
-    render () { 
-        ctx.drawImage(Resources.get(this.sprite), this.x, this.y); 
-    } 
     handleInput () { 
         //update x & y according to input
 
@@ -30,7 +28,9 @@ class Enemy {
         this.y = y;
         this.sprite = 'images/enemy-bug.png'; 
     }
-    // Update the enemy's position
+    render () { 
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y); 
+    }
     update (dt) { 
         /* Parameter: dt, a time delta between ticks - multiply any movement by the dt parameter
         If enemy position != boundry
@@ -39,11 +39,6 @@ class Enemy {
             reset enemy to start position
         */
     }
-    // Draws enemy on the screen
-    render () { 
-        ctx.drawImage(Resources.get(this.sprite), this.x, this.y); 
-    } 
-    //Handles user input to move player
     handleInput () { 
 
     }
@@ -52,14 +47,9 @@ class Enemy {
 
 
 // Instantiate objects.
+const player = new Player();
 
-
-let allEnemies = [];
-
-
-
-let player =
-// Place the player object in a variable called player
+const allEnemies = [];
 
 
 

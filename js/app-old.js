@@ -38,7 +38,7 @@ Player.prototype.update = function(dt) {
 
 //Player.prototype.handleInput = function(){
 
-  //}
+  }
 
 
 
