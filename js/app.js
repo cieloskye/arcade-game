@@ -1,5 +1,5 @@
 // Player, our hero
-let Player = class {
+class Player {
     function(x, y, sprite) { 
         this.x = x;
         this.y = y;
@@ -24,7 +24,7 @@ let Player = class {
 
 
 // Enemies our player must avoid
-let Enemy = class {
+class Enemy {
     contructor (x, y, sprite) { 
         this.x = x;
         this.y = y;
