@@ -40,11 +40,13 @@ var Engine = (function(global) {
     }
 
     function updateEntities(dt) {
+        /*
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
         });
+       
         player.update();
-        
+         */
     }
 
     function render() {
@@ -73,10 +75,11 @@ var Engine = (function(global) {
     }
 
     function renderEntities() {
+        /*
         allEnemies.forEach(function(enemy) {
             enemy.render();
         });
-
+        */
         player.render();
     }
 
