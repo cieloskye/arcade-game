@@ -34,9 +34,9 @@ class Enemy {
 
 class Player {
     constructor (sprite, x, y) { 
-        this.sprite = 'images/char-horn-girl.png';
-        this.x = 0;
-        this.y = 0;
+        this.sprite = sprite;
+        this.x = x;
+        this.y = y;
     }  
   
     render() {   
@@ -60,7 +60,7 @@ class Player {
 };
 
 // Instantiate objects.
-const player = new Player();
+const player = new Player('images/char-horn-girl.png', 200, 400);
 
 const allEnemies = [];
 
