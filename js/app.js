@@ -7,24 +7,26 @@ class Player {
         this.y = y;
         this.sprite = sprite; 
     }
-}    
     
-Enemy.prototype.render = function() {   
+    render() {   
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y); 
     }
     
-Enemy.prototype.update = function(dt) { 
+    update(dt) { 
         //check collision here
             // player position ==== ememy position?
         // game over?
             //player position === final tile?
     }
     
-Enemy.prototype.handleInput = function() { 
+    handleInput() { 
         //update x & y according to input
 
     }
+    reset() {
 
+    }
+}
 
 // Enemies our player must avoid
 class Enemy {
@@ -33,28 +35,32 @@ class Enemy {
         this.y = y;
         this.sprite = sprite;
     }
-}
 
-Enemy.prototype.render = function() { 
+    render() { 
     
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y); 
     
     }
     
-Enemy.prototype.update = function(dt) { 
+    update(dt) { 
         /* Parameter: dt, a time delta between ticks - multiply any movement by the dt parameter
         If enemy position != boundry
             increment x by speed * dt
         else 
             reset enemy to start position
+        /* if (enemy hasn't passed final tile) {
+            increment ++
+        } else {
+        reset to starting position
+        }
         */
     }
     
-Enemy.prototype.handleInput = function() { 
+    handleInput() { 
 
     }
-
-
+  
+}
 
 // Instantiate objects.
 const player = new Player(202, 400, 'images/char-horn-girl.png');
@@ -63,8 +69,10 @@ const enemy = new Enemy('images/enemy-bug.png');
 
 /*
 const enemyPosition = [55, 147, 230];
-
-const allEnemies = enemy.map((y, index) => {
+*/
+const allEnemies = [];
+/*
+    enemy.map((y, index) => {
     return new Enemy((-142 * (index + 1)), y);
 
 }); 

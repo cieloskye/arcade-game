@@ -62,7 +62,7 @@
         readyCallbacks.push(func);
     }
 
-    win = {
+    window.Resources = {
         load: load,
         get: get,
         onReady: onReady,

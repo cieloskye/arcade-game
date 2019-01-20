@@ -1,10 +1,7 @@
 // engine.js
 
 var Engine = (function(global) {
-    /* Predefine the variables we'll be using within this scope,
-     * create the canvas element, grab the 2D context for that canvas
-     * set the canvas element's height/width and add it to the DOM.
-     */
+
     var doc = global.document,
         win = global.window,
         canvas = doc.createElement('canvas'),
@@ -40,13 +37,11 @@ var Engine = (function(global) {
     }
 
     function updateEntities(dt) {
-        /*
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
         });
        
         player.update();
-         */
     }
 
     function render() {
@@ -66,8 +61,7 @@ var Engine = (function(global) {
 
         for (row = 0; row < numRows; row++) {
             for (col = 0; col < numCols; col++) {
-
-                ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);
+                ctx.drawImage(Resources.get(rowImages[row]), col * 101, row * 83);           
             }
         }
 
@@ -75,11 +69,10 @@ var Engine = (function(global) {
     }
 
     function renderEntities() {
-        /*
         allEnemies.forEach(function(enemy) {
             enemy.render();
         });
-        */
+        
         player.render();
     }
 
