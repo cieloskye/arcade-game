@@ -49,11 +49,27 @@ class Player {
         // game over?
             //player position === final tile?
     }
+
+
+
     
-    handleInput() { 
-        //update x & y according to input
+    handleInput() {
+        player.speedX = 0;
+        player.speedY = 0;
+        if (37) {
+            this.x = -5;
+        } else if (39) {
+            this.x = +5;
+        } else if (38) {
+            this.y = +5;
+        } else if (40) {
+            this.y = -5;
+        };
+        
+        player.update();
 
     }
+
     reset() {
 
     }
@@ -65,7 +81,6 @@ const player = new Player('images/char-horn-girl.png', 200, 400);
 const allEnemies = [];
 
 // Listens for key presses and sends to Player.handleInput() method. 
-// DO NOT TOUCH!
 document.addEventListener('keyup', function(e) { 
     var allowedKeys = {
         37: 'left',
