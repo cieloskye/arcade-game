@@ -37,11 +37,11 @@ var Engine = (function(global) {
     }
 
     function updateEntities(dt) {
-        allEnemies.forEach(function(enemy) {
-            enemy.update(dt);
-        });
+        //allEnemies.forEach(function(enemy) {
+        //    enemy.update(dt);
+        //});
        
-//        player.update();
+        //player.update();
     }
 
     function render() {
@@ -69,11 +69,11 @@ var Engine = (function(global) {
     }
 
     function renderEntities() {
-        allEnemies.forEach(function(enemy) {
-            enemy.render();
-        });
+        //allEnemies.forEach(function(enemy) {
+        //    enemy.render();
+        //});
         
-//        player.render();
+        player.render();
     }
 
     /* This function does nothing but it could have been a good place to
