@@ -37,6 +37,7 @@ class Player {
         this.sprite = sprite;
         this.x = x;
         this.y = y;
+
     }  
   
     render() {   
@@ -56,16 +57,16 @@ class Player {
     handleInput(input) {
         switch(input) {
             case 'up':
-                this.y -= 25;
+                this.y -= 50;
                 break;
             case 'down':
-                this.y += 25;
+                this.y += 50;
                 break;
             case 'left':
-                this.x -= 25;
+                this.x -= 50;
                 break;
             case 'right':
-                this.x += 25;
+                this.x += 50;
         }
         
         player.update();
