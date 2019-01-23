@@ -37,7 +37,8 @@ class Player {
         this.sprite = sprite;
         this.x = x;
         this.y = y;
-
+        this.step = 101;
+        this.jump = 83;
     }  
   
     render() {   
@@ -57,16 +58,16 @@ class Player {
     handleInput(input) {
         switch(input) {
             case 'up':
-                this.y -= 50;
+                this.y -= this.jump;
                 break;
             case 'down':
-                this.y += 50;
+                this.y += this.jump;
                 break;
             case 'left':
-                this.x -= 50;
+                this.x -= this.step;
                 break;
             case 'right':
-                this.x += 50;
+                this.x += this.step;
         }
         
         player.update();
@@ -79,7 +80,7 @@ class Player {
 };
 
 // Instantiate objects.
-const player = new Player('images/char-horn-girl.png', 200, 400);
+const player = new Player('images/char-horn-girl.png', 200, 450);
 
 const allEnemies = [];
 
