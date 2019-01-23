@@ -54,17 +54,19 @@ class Player {
 
     
     handleInput(input) {
-        player.speedX = 0;
-        player.speedY = 0;
-        if (i === 37) {
-            this.x = -5;
-        } else if (keyup === 39) {
-            this.x = +5;
-        } else if (keyup === 38) {
-            this.y = +5;
-        } else if (keyup === 40) {
-            this.y = -5;
-        };
+        switch(input) {
+            case 'up':
+                this.y -= 25;
+                break;
+            case 'down':
+                this.y += 25;
+                break;
+            case 'left':
+                this.x -= 25;
+                break;
+            case 'right':
+                this.x += 25;
+        }
         
         player.update();
 
