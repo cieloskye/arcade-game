@@ -32,6 +32,7 @@ class Enemy {
   
 }
 
+//Player object, which user controls during game play
 class Player {
     constructor (sprite, x, y) { 
         this.sprite = sprite;
@@ -40,7 +41,7 @@ class Player {
         this.step = 101;
         this.jump = 83;
     }  
-  
+    //Creates Player object on canvas.
     render() {   
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y); 
     };
@@ -54,7 +55,8 @@ class Player {
 
 
 
-    
+    //Allows user to operate player object with arrow keys 
+    //by calling on the event listener below.
     handleInput(input) {
         switch(input) {
             case 'up':
@@ -68,6 +70,7 @@ class Player {
                 break;
             case 'right':
                 this.x += this.step;
+                break;
         }
         
         player.update();
