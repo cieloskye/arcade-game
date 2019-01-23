@@ -53,16 +53,16 @@ class Player {
 
 
     
-    handleInput() {
+    handleInput(input) {
         player.speedX = 0;
         player.speedY = 0;
-        if (37) {
+        if (i === 37) {
             this.x = -5;
-        } else if (39) {
+        } else if (keyup === 39) {
             this.x = +5;
-        } else if (38) {
+        } else if (keyup === 38) {
             this.y = +5;
-        } else if (40) {
+        } else if (keyup === 40) {
             this.y = -5;
         };
         
