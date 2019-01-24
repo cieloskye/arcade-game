@@ -36,14 +36,16 @@ var Engine = (function(global) {
         // checkCollisions();
     }
 
+    
     function updateEntities(dt) {
-        //allEnemies.forEach(function(enemy) {
-        //    enemy.update(dt);
-        //});
+       // allEnemies.forEach(function(enemy) {
+      //      enemy.update(dt);
+      //  });
        
-        //player.update();
+       // player.update();
     }
 
+    //Creates gameboard/canvas
     function render() {
         var rowImages = [
                 'images/water-block.png',   // Top row is water
@@ -68,10 +70,13 @@ var Engine = (function(global) {
         renderEntities();
     }
 
+    //Renders game characters.
     function renderEntities() {
-        //allEnemies.forEach(function(enemy) {
-        //    enemy.render();
-        //});
+        allEnemies.forEach(function(enemy) {
+        
+            enemy.render();
+        
+        });
         
         player.render();
     }

@@ -6,11 +6,11 @@ class Enemy {
         this.sprite = 'images/enemy-bug.png';
         this.x = x;
         this.y = y;  
-    }
+    };
 
     render() { 
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y); 
-    }
+    };
     
     update(dt) { 
         /* Parameter: dt, a time delta between ticks - multiply any movement by the dt parameter
@@ -24,11 +24,11 @@ class Enemy {
         reset to starting position
         }
         */
-    }
+    };
     
     handleInput() { 
 
-    }
+    };
   
 }
 
@@ -40,7 +40,7 @@ class Player {
         this.y = y;
         this.step = 101;
         this.jump = 83;
-    }  
+    }; 
     //Creates Player object on canvas.
     render() {   
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y); 
@@ -51,7 +51,7 @@ class Player {
             // player position ==== enemy position?
         // game over?
             //player position === final tile?
-    }
+    };
 
 
 
@@ -92,7 +92,39 @@ class Player {
 // Instantiate objects.
 const player = new Player('images/char-horn-girl.png', 200, 450);
 
+
+//const enemy01 = new Enemy();
+//const enemy02 = new Enemy();
+//const enemy03 = new Enemy();
+//const enemy04 = new Enemy();
+//const enemy05 = new Enemy();
+//const enemy06 = new Enemy();
+//const enemy07 = new Enemy();
+//const enemy08 = new Enemy();
+//const enemy09 = new Enemy();
+//const enemy10 = new Enemy();
+//const enemy11 = new Enemy();
+//const enemy12 = new Enemy();
+
+const bug = new Enemy();
 const allEnemies = [];
+
+allEnemies.push(bug);
+
+               //'enemy01', 
+               //'enemy02', 
+               //'enemy03',  
+               //'enemy04',  
+               //'enemy05', 
+               //'enemy06', 
+               //'enemy07', 
+               //'enemy08', 
+               //'enemy09', 
+               //'enemy10', 
+               //'enemy11', 
+               //'enemy12'
+               //);
+
 
 // Listens for key presses and sends to Player.handleInput() method. 
 document.addEventListener('keyup', function(e) { 
