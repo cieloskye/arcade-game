@@ -4,8 +4,8 @@
 class Enemy {
     contructor (sprite, x, y) { 
         this.sprite = 'images/enemy-bug.png';
-        this.x = x;
-        this.y = y;  
+        this.x = 0;
+        this.y = 0;  
     };
 
     render() { 
