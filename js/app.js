@@ -3,9 +3,9 @@
 // Enemies our player must avoid
 class Enemy {
     contructor (sprite, x, y) { 
-        this.sprite = 'images/enemy-bug.png';
-        this.x = 0;
-        this.y = 0;  
+        this.sprite = sprite;
+        this.x = x;
+        this.y = y;  
     };
 
     render() { 
@@ -93,7 +93,7 @@ class Player {
 const player = new Player('images/char-horn-girl.png', 200, 450);
 
 
-//const enemy01 = new Enemy();
+const enemy01 = new Enemy('images/enemy-bug.png', 0, 0);
 //const enemy02 = new Enemy();
 //const enemy03 = new Enemy();
 //const enemy04 = new Enemy();
@@ -106,10 +106,10 @@ const player = new Player('images/char-horn-girl.png', 200, 450);
 //const enemy11 = new Enemy();
 //const enemy12 = new Enemy();
 
-const bug = new Enemy();
+const queen = new Enemy('images/char-princess-girl.png', 0, 0);
 const allEnemies = [];
 
-allEnemies.push(bug);
+allEnemies.push(enemy01, queen);
 
                //'enemy01', 
                //'enemy02', 
