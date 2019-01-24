@@ -5,10 +5,11 @@ class Enemy {
     contructor (sprite, x, y) { 
         this.sprite = sprite;
         this.x = x;
-        this.y = y;  
+        this.y = y; 
+        this.step = 101; 
     };
 
-    render() { 
+    render() {   
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y); 
     };
     
@@ -47,6 +48,7 @@ class Player {
     };
       
     update(dt) { 
+ 
         //check collision here
             // player position ==== enemy position?
         // game over?
@@ -92,8 +94,12 @@ class Player {
 // Instantiate objects.
 const player = new Player('images/char-horn-girl.png', 200, 450);
 
+const allEnemies = [];
+
+const queen = new Enemy('images/char-princess-girl.png', 0, 0);
 
 const enemy01 = new Enemy('images/enemy-bug.png', 0, 0);
+
 //const enemy02 = new Enemy();
 //const enemy03 = new Enemy();
 //const enemy04 = new Enemy();
@@ -106,10 +112,7 @@ const enemy01 = new Enemy('images/enemy-bug.png', 0, 0);
 //const enemy11 = new Enemy();
 //const enemy12 = new Enemy();
 
-const queen = new Enemy('images/char-princess-girl.png', 0, 0);
-const allEnemies = [];
-
-allEnemies.push(enemy01, queen);
+allEnemies.push(queen);
 
                //'enemy01', 
                //'enemy02', 
