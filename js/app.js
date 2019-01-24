@@ -75,10 +75,9 @@ class Player {
                 }
                 break;
             case 'right':
-                if (this.x < this.step * 4) {
+                if (this.x < this.step * 3) {
                     this.x += this.step;
                 }
-                break;
         }
         
         player.update();
