@@ -3,35 +3,26 @@
 // Enemies our player must avoid
 class Enemy {
     contructor (sprite, x, y) { 
-        this.sprite = 'images/enemy-bug.png';
-        this.x = x;
-        this.y = y; 
-        this.step = 101; 
+        this.sprite = sprite;
+        this.x = -(this.step * 2);
+        this.y = 55; 
+        this.step = 101;
+        this.boundary = this.step * 4; 
     };
 
     render() {   
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y); 
     };
     
-    //update(dt) { 
+    update(dt) { 
         // Parameter: dt, a time delta between ticks 
         //  - multiply any movement by the dt parameter
-        if() {
-
-        }
-
-
-        If enemy position != boundary
-            increment x by speed * dt
-        else 
-            reset enemy to start position
-        /* if (enemy hasn't passed final tile) {
-            increment ++
+        if(this.x < this.boundary) {
+            this.x += 150 * dt;
         } else {
-        reset to starting position
-        }
-        */
-    //};
+            this.x = -30;
+        };
+    };
     
     //handleInput() { 
         //if (this.x > 0) {
@@ -41,10 +32,10 @@ class Enemy {
     //};
   
 }
-
+/*
 //Enemy Queen Who Guards the final tile (water)
-class Queen {
-    contructor (sprite, x, y) { 
+class EnemyQueen {
+    constructor (sprite, x, y) { 
         this.sprite = 'images/char-princess-girl.png';
         this.x = x;
         this.y = y; 
@@ -56,7 +47,7 @@ class Queen {
     };
 }
 
-
+*/
 
 //Player object, which user controls during game play
 class Player {
@@ -119,43 +110,19 @@ class Player {
 // Instantiate objects.
 const player = new Player('images/char-horn-girl.png', 200, 440);
 
-const bug = new Enemy();
-
+const queen = new Enemy('images/char-princess-girl.png', -505, 0);
+const enemy01 = new Enemy('images/enemy-bug.png', -101, 55);
+const enemy02 = new Enemy('images/enemy-bug.png', -101 * 3, 138);
+const enemy03 = new Enemy('images/enemy-bug.png', -101 * 2, 221);
+const enemy04 = new Enemy('images/enemy-bug.png', -120, 304);
+const enemy05 = new Enemy('images/enemy-bug.png', -101, 387);
 
 const allEnemies = [];
 
-const queen = new Enemy( );
+allEnemies.push(queen, enemy01, enemy02, enemy03, enemy04, enemy05);
+               
 
-//
-//const enemy02 = new Enemy();
-//const enemy03 = new Enemy();
-//const enemy04 = new Enemy();
-//const enemy05 = new Enemy();
-//const enemy06 = new Enemy();
-//const enemy07 = new Enemy();
-//const enemy08 = new Enemy();
-//const enemy09 = new Enemy();
-//const enemy10 = new Enemy();
-//const enemy11 = new Enemy();
-//const enemy12 = new Enemy();
-
-allEnemies.push(bug);
-
-
-               //'enemy01', 
-               //'enemy02', 
-               //'enemy03',  
-               //'enemy04',  
-               //'enemy05', 
-               //'enemy06', 
-               //'enemy07', 
-               //'enemy08', 
-               //'enemy09', 
-               //'enemy10', 
-               //'enemy11', 
-               //'enemy12'
-               //);
-
+console.log(allEnemies);
 
 // Listens for key presses and sends to Player.handleInput() method. 
 document.addEventListener('keyup', function(e) { 
