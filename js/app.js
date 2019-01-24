@@ -13,7 +13,7 @@ class Enemy {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y); 
     };
     
-    update(dt) { 
+    //update(dt) { 
         /* Parameter: dt, a time delta between ticks - multiply any movement by the dt parameter
         If enemy position != boundary
             increment x by speed * dt
@@ -25,11 +25,11 @@ class Enemy {
         reset to starting position
         }
         */
-    };
+    //};
     
-    handleInput() { 
+    //handleInput() { 
 
-    };
+    //};
   
 }
 
@@ -92,7 +92,7 @@ class Player {
 };
 
 // Instantiate objects.
-const player = new Player('images/char-horn-girl.png', 200, 450);
+const player = new Player('images/char-horn-girl.png', 200, 440);
 
 const allEnemies = [];
 

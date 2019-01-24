@@ -44,7 +44,7 @@ var Engine = (function(global) {
         /* Call our update/render functions, pass along the time delta to
          * our update function since it may be used for smooth animation.
          */
-        update(dt);
+//        update(dt);
         render();
 
         /* Set our lastTime variable which is used to determine the time delta
@@ -90,10 +90,10 @@ var Engine = (function(global) {
      * render methods.
      */
     function updateEntities(dt) {
-        allEnemies.forEach(function(enemy) {
-            enemy.update(dt);
-        });
-        player.update();
+//        allEnemies.forEach(function(enemy) {
+//            enemy.update(dt);
+//        });
+//        player.update();
     }
 
     /* This function initially draws the "game level", it will then call
@@ -149,9 +149,9 @@ var Engine = (function(global) {
         /* Loop through all of the objects within the allEnemies array and call
          * the render function you have defined.
          */
-        allEnemies.forEach(function(enemy) {
-            enemy.render();
-        });
+        //allEnemies.forEach(function(enemy) {
+        //    enemy.render();
+        //});
 
         player.render();
     }
@@ -178,7 +178,7 @@ var Engine = (function(global) {
         'images/char-princess-girl.png',
         'images/char-cat-girl.png'
     ]);
-    
+
     Resources.onReady(init);
 
     /* Assign the canvas' context object to the global variable (the window
