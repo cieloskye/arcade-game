@@ -60,16 +60,24 @@ class Player {
     handleInput(input) {
         switch(input) {
             case 'up':
-                this.y -= this.jump;
+                if (this.y > 0) {
+                    this.y -= this.jump;
+                }
                 break;
             case 'down':
-                this.y += this.jump;
+                if (this.y < 0) {
+                    this.y += this.jump;
+                }
                 break;
             case 'left':
-                this.x -= this.step;
+                if (this.x > 0) {
+                    this.x -= this.step;
+                }
                 break;
             case 'right':
-                this.x += this.step;
+                if (this.x <0) {
+                    this.x += this.step;
+                }
                 break;
         }
         
