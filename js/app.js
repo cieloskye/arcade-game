@@ -3,7 +3,7 @@
 // Enemies our player must avoid
 class Enemy {
     contructor (sprite, x, y) { 
-        this.sprite = sprite;
+        this.sprite = 'images/enemy-bug.png';
         this.x = x;
         this.y = y; 
         this.step = 101; 
@@ -14,7 +14,13 @@ class Enemy {
     };
     
     //update(dt) { 
-        /* Parameter: dt, a time delta between ticks - multiply any movement by the dt parameter
+        // Parameter: dt, a time delta between ticks 
+        //  - multiply any movement by the dt parameter
+        if() {
+
+        }
+
+
         If enemy position != boundary
             increment x by speed * dt
         else 
@@ -28,10 +34,29 @@ class Enemy {
     //};
     
     //handleInput() { 
+        //if (this.x > 0) {
+            //this.x += this.step;
+        //}
 
     //};
   
 }
+
+//Enemy Queen Who Guards the final tile (water)
+class Queen {
+    contructor (sprite, x, y) { 
+        this.sprite = 'images/char-princess-girl.png';
+        this.x = x;
+        this.y = y; 
+        this.step = 101; 
+    };
+
+    render() {   
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y); 
+    };
+}
+
+
 
 //Player object, which user controls during game play
 class Player {
@@ -94,12 +119,14 @@ class Player {
 // Instantiate objects.
 const player = new Player('images/char-horn-girl.png', 200, 440);
 
+const bug = new Enemy();
+
+
 const allEnemies = [];
 
-const queen = new Enemy('images/char-princess-girl.png', 0, 0);
+const queen = new Enemy( );
 
-const enemy01 = new Enemy('images/enemy-bug.png', 0, 0);
-
+//
 //const enemy02 = new Enemy();
 //const enemy03 = new Enemy();
 //const enemy04 = new Enemy();
@@ -112,7 +139,8 @@ const enemy01 = new Enemy('images/enemy-bug.png', 0, 0);
 //const enemy11 = new Enemy();
 //const enemy12 = new Enemy();
 
-allEnemies.push(queen);
+allEnemies.push(bug);
+
 
                //'enemy01', 
                //'enemy02', 
