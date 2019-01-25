@@ -7,8 +7,8 @@ class Enemy {
         this.x = x;
         this.y = y;
         this.speed = speed; 
-        this.step = 101;
-        this.edge = this.step * 4; 
+        this.move = 101;
+        this.edge = this.move * 5; 
     };
 
     render() {
@@ -16,23 +16,19 @@ class Enemy {
         //ctx.drawImage(this.sprite, this.x, this.y);
     };
  
-    
+    //moves enemy sprite across and off the screen right 
+    // then resets spirte off screen left to run again
     update(dt) { 
-    	if(this.x < this.step * 5) {
+    	if(this.x < this.edge) {
         	this.x += 200 * dt;
+        } else {
+        	this.x = -120;
         }
-        // Parameter: dt, a time delta between ticks 
-        //  - multiply any movement by the dt parameter
-        //if(this.x < this.edge) {
-        //    this.x += 150 * dt;
-        //} else {
-        //    this.x = -101;
-        //};
     };
     
     handleInput() { 
         //if (this.x > 0) {
-            //this.x += this.step;
+            //this.x += this.move;
         //}
 
     };
@@ -46,7 +42,7 @@ class Queen {
         this.sprite = 'images/char-princess-girl.png';
         this.x = x;
         this.y = y; 
-        this.step = 101; 
+        this.move = 101; 
     };
 
     render() {   
@@ -61,7 +57,7 @@ class Player {
         this.sprite = sprite;
         this.x = x;
         this.y = y;
-        this.step = 101;
+        this.move = 101;
         this.jump = 83;
     }; 
     //Creates Player object on canvas.
@@ -98,12 +94,12 @@ class Player {
                 break;
             case 'left':
                 if (this.x > 0) {
-                    this.x -= this.step;
+                    this.x -= this.move;
                 }
                 break;
             case 'right':
-                if (this.x < this.step * 3) {
-                    this.x += this.step;
+                if (this.x < this.move * 3) {
+                    this.x += this.move;
                 }
         }
         
