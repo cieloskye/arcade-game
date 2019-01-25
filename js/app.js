@@ -2,7 +2,7 @@
 
 // Enemies our player must avoid
 class Enemy {
-    contructor (sprite, x, y, speed) { 
+    constructor (sprite, x, y, speed) { 
         this.sprite = 'images/enemy-bug.png';
         this.x = x;
         this.y = y;
@@ -35,7 +35,8 @@ class Enemy {
     };
   
 }
-/*
+
+
 //Enemy Queen Who Guards the final tile (water)
 class EnemyQueen {
     constructor (sprite, x, y) { 
@@ -50,7 +51,6 @@ class EnemyQueen {
     };
 }
 
-*/
 
 //Player object, which user controls during game play
 class Player {
@@ -68,14 +68,13 @@ class Player {
       
     update(dt) { 
         for(let enemy of allEnemies) {
-            console.log(enemy);
+        if(this.x < this.step * 5) {
+        	this.x += 200 * dt;
+        }
         if(this.y === enemy.y) {
             alert('collision!');
 
         }}
-
-        //check collision here
-            // player position ==== enemy position?
         // game over?
             //player position === final tile?
     };
@@ -121,18 +120,18 @@ const player = new Player('images/char-horn-girl.png', 200, 440);
 
 
 
-//const enemy1 = new Enemy('images/char-princess-girl.png', 0, 0, 150);
+const enemy1 = new Enemy(-400, 0, 150);
 const enemy2 = new Enemy(-101, 55, 400);
 const enemy3 = new Enemy(-150 * 3, 138, 300);
 const enemy4 = new Enemy(-101 * 2, 221, 350);
 const enemy5 = new Enemy(-120, 304, 200);
 const enemy6 = new Enemy(-101, 387, 150);
-
+const queen = new EnemyQueen();
 
 const allEnemies = [];
 
 allEnemies.push(
-    //enemy1,
+    enemy1,
     enemy2,
     enemy3,
     enemy4,
