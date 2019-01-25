@@ -113,7 +113,7 @@ class Player {
 };
 
 // Instantiate objects.
-const player = new Player('images/char-horn-girl.png', 200, 440);
+const player = new Player('images/char-horn-girl.png', 200, 445);
 
 
 const enemy1 = new Enemy(-250, 60, 500);
