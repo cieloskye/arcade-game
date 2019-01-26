@@ -20,7 +20,7 @@ class Enemy {
     // then resets spirte off screen left to run again
     update(dt) { 
     	if(this.x < this.edge) {
-        	this.x += 330 * dt;
+        	this.x += this.speed * dt;
         } else {
         	this.x = -120;
         }
@@ -118,11 +118,11 @@ const player = new Player('images/char-horn-girl.png', 200, 445);
 
 const enemy1 = new Enemy(-250, 60, 500);
 const enemy2 = new Enemy(-500, 60, 400);
-const enemy3 = new Enemy(-100, 145, 700);
+const enemy3 = new Enemy(-100, 145, 396);
 const enemy4 = new Enemy(-500, 140, 300);
 const enemy5 = new Enemy(-700, 225, 400);
-const enemy6 = new Enemy(-150, 303, 150);
-const enemy7 = new Enemy(-350, 390, 100);
+const enemy6 = new Enemy(-250, 303, 290);
+const enemy7 = new Enemy(-101, 390, 180);
 //const queen = new Queen(0, 50, 200);
 
 const allEnemies = [];
