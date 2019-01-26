@@ -67,14 +67,16 @@ class Player {
       
     update(dt) { 
         for(let enemy of allEnemies) {
-
-        if(this.y === enemy.y) {
-            alert('collision!');
-
-        }}
-        // game over?
-            //player position === final tile?
+			if(this.y === enemy.y) {
+				console.log('Oh no!');
+    		}
+    	}
+    	if(this.y === 55) {
+    		console.log('You did it!');
+    	};
+  			
     };
+
 
 
 
@@ -127,9 +129,6 @@ const enemy7 = new Enemy(-101, 390, 180);
 
 const allEnemies = [];
 
-
-console.log(enemy1.y);
-
 allEnemies.push(
     enemy1,
     enemy2,
@@ -137,7 +136,7 @@ allEnemies.push(
     enemy4,
     enemy5,
     enemy6,
-    enemy7
+    //enemy7
     );
 
 // Listens for key presses and sends to Player.handleInput() method. 
