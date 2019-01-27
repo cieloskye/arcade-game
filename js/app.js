@@ -1,5 +1,6 @@
 // app.js
-
+//Special thanks to https://matthewcranford.com/ 
+//for helping me get unstuck on this.startX & this.startY.
 // Enemies our player must avoid
 class Enemy {
     constructor (x, y, speed) { 
@@ -64,6 +65,7 @@ class Player {
         this.startY = (this.moveY * 4) + 55;
         this.x = this.startX;
         this.y = this.startY;
+        this.win = false;
     }; 
     //Creates Player object on canvas.
     render() {   
@@ -78,11 +80,11 @@ class Player {
 				console.log('Oh no!');
                 this.reset();
                 }
-            console.log('y', this.y, enemy.y);
-            console.log('x', this.x, enemy.x);
     		}
     	if(this.y === -28) {
-    		console.log('You did it!');
+    		this.win = true;
+            alert('You made it!');
+            break;
     	};
   			
     };
@@ -140,11 +142,11 @@ const enemy6 = new Enemy(-120, 304, 290);
 const allEnemies = [];
 
 allEnemies.push(
-    //enemy1,
-    //enemy2,
-    //enemy3,
-    //enemy4,
-    //enemy5,
+    enemy1,
+    enemy2,
+    enemy3,
+    enemy4,
+    enemy5,
     enemy6,
     );
 
