@@ -1,6 +1,8 @@
 // app.js
 //Special thanks to https://matthewcranford.com/ 
 //for helping me get unstuck on this.startX & this.startY.
+
+
 // Enemies our player must avoid
 class Enemy {
     constructor (x, y, speed) { 
