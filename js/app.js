@@ -39,7 +39,7 @@ class Enemy {
   
 }
 
-/*
+/* Later Upgrades:
 //Enemy Queen Who Guards the final tile (water)
 class Queen {
     constructor (sprite, x, y) { 
@@ -73,6 +73,7 @@ class Player {
     };
       
     update(dt) { 
+        //Determines if a collison has occured between the player & enemies.
         for(let enemy of allEnemies) {
 			if(this.y === enemy.y 
             && enemy.x + enemy.moveX > this.x 
@@ -85,7 +86,6 @@ class Player {
     	if(this.y === -28) {
             const modal = document.querySelector('.modal');
     		modal.style.display = 'block';
-            modal.classList.toggle('hidden');
         } 
     };     			
     //Allows user to operate player object with arrow keys 
@@ -123,6 +123,7 @@ class Player {
     }
 };
 
+//onclick function for modal
 function winner(){
         const modal = document.querySelector('.modal');
         modal.classList.toggle('hidden');
@@ -143,19 +144,21 @@ const enemy6 = new Enemy(-120, 304, 290);
 const allEnemies = [];
 
 allEnemies.push(
-    //enemy1,
-    //enemy2,
-    //enemy3,
-    //enemy4,
-    //enemy5,
+    enemy1,
+    enemy2,
+    enemy3,
+    enemy4,
+    enemy5,
     enemy6,
     );
 
 /*
+Later Upgrades
 if (collisionCount === 3) {
     gameOver();
 }
 */
+
 // Listens for key presses and sends to Player.handleInput() method. 
 document.addEventListener('keyup', function(e) { 
     var allowedKeys = {

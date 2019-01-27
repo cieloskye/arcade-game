@@ -10,7 +10,7 @@ body {
   padding: 10px 10px;
   font-size: 20px;
   background-color: rgba(51,203,249,0.8);
-  font-family: fantasy, sans-serif;
+  font-family: helvetica, sans-serif;
   font-weight: bold;
   margin: 2% auto;
 }
@@ -32,7 +32,7 @@ body {
   border: 2px solid;
   background-color: rgba(51,203,249,0.7);
   text-align: center;
-  font-family: fantasy, sans-serif;
+  font-family: helvetica, sans-serif;
   font-weight: bold;
   font-size: 20px;
 }
