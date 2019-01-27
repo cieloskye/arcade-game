@@ -5,7 +5,7 @@ class Enemy {
     constructor (x, y, speed) { 
         this.sprite = 'images/enemy-bug.png';
         this.startX = x - 24;
-        this.startY = y + 1;
+        this.startY = y;
         this.x = this.startX;
         this.y = this.startY;
         this.speed = speed; 
@@ -72,13 +72,15 @@ class Player {
       
     update(dt) { 
         for(let enemy of allEnemies) {
-			if(this.y === enemy.y && this.x === enemy.x) {
-				
+			if(this.y === enemy.y 
+            && enemy.x + enemy.moveX > this.x 
+            && enemy.x < this.x + this.moveX) {
 				console.log('Oh no!');
+                this.reset();
+                }
+            console.log('y', this.y, enemy.y);
+            console.log('x', this.x, enemy.x);
     		}
-    	console.log('y', this.y, enemy.y);
-        console.log('x', this.x, enemy.x);
-    	}
     	if(this.y === -28) {
     		console.log('You did it!');
     	};
@@ -116,9 +118,10 @@ class Player {
         player.update();
 
     }
-
+    //reset Player
     reset() {
-
+        this.x = this.startX;
+        this.y = this.startY;
     }
 };
 
@@ -126,25 +129,23 @@ class Player {
 const player = new Player('images/char-horn-girl.png', 200, 320);
 
 
-const enemy1 = new Enemy(-250, 60, 400);
-const enemy2 = new Enemy(-500, 60, 402);
-const enemy3 = new Enemy(-100, 135, 310);
-const enemy4 = new Enemy(-500, 135, 300);
-const enemy5 = new Enemy(-700, 225, 400);
-const enemy6 = new Enemy(-200, 303, 290);
-const enemy7 = new Enemy(-101, (this.startY * 2), 180);
+const enemy1 = new Enemy(-120, 55, 400);
+const enemy2 = new Enemy(-500, 55, 402);
+const enemy3 = new Enemy(-100, 138, 310);
+const enemy4 = new Enemy(-500, 138, 300);
+const enemy5 = new Enemy(-300, 221, 400);
+const enemy6 = new Enemy(-120, 304, 290);
 //const queen = new Queen(0, 50, 200);
 
 const allEnemies = [];
 
 allEnemies.push(
-    enemy1,
+    //enemy1,
     //enemy2,
-   // enemy3,
-   // enemy4,
-   // enemy5,
-      enemy6,
-    //enemy7
+    //enemy3,
+    //enemy4,
+    //enemy5,
+    enemy6,
     );
 
 // Listens for key presses and sends to Player.handleInput() method. 
