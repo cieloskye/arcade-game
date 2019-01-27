@@ -8,8 +8,8 @@ class Enemy {
         this.y = y;
         this.speed = speed; 
         this.moveY = 101;
-        this.moveX = 83
-        this.edge = this.move * 5; 
+        this.moveX = 83;
+        this.edge = this.moveX * 6; 
     };
 
     render() {
@@ -29,7 +29,7 @@ class Enemy {
     
     handleInput() { 
         if (this.x > 0) {
-            this.x += this.move;
+            this.x += this.moveX;
         }
 
     };
@@ -57,9 +57,9 @@ class Player {
     constructor (sprite, x, y) { 
         this.sprite = sprite;
         this.x = x;
-        this.y = y;
-        this.move = 101;
-        this.jump = 83;
+        this.y = y + 60;
+        this.moveX = 101;
+        this.moveY = 83;
     }; 
     //Creates Player object on canvas.
     render() {   
@@ -89,12 +89,12 @@ class Player {
         switch(input) {
             case 'up':
                 if (this.y > 0) {
-                    this.y -= this.jump;
+                    this.y -= this.moveY;
                 }
                 break;
             case 'down':
-                if (this.y < this.jump * 4) {
-                    this.y += this.jump;
+                if (this.y < this.moveY * 4) {
+                    this.y += this.moveY;
                 }
                 break;
             case 'left':
@@ -118,7 +118,7 @@ class Player {
 };
 
 // Instantiate objects.
-const player = new Player('images/char-horn-girl.png', 200, 445);
+const player = new Player('images/char-horn-girl.png', 200, 320);
 
 
 const enemy1 = new Enemy(-250, 60, 500);
