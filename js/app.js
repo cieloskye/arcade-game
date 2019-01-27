@@ -56,6 +56,7 @@ class Queen {
 */
 
 //Player object, which user controls during game play
+
 class Player {
     constructor (sprite, x, y) { 
         this.sprite = sprite;
@@ -65,7 +66,6 @@ class Player {
         this.startY = (this.moveY * 4) + 55;
         this.x = this.startX;
         this.y = this.startY;
-        this.win = false;
     }; 
     //Creates Player object on canvas.
     render() {   
@@ -81,17 +81,19 @@ class Player {
                 this.reset();
                 }
     		}
+        //Game Over Coditions
     	if(this.y === -28) {
-    		this.win = true;
-            alert('You made it!');
-            break;
-    	};
-  			
+    		modal.style.display = 'block';
+            
+            span.onclick = function() {
+            modal.style.display = "none";
+            this.reset();
+            }
+
+            
+
+        };     			
     };
-
-
-
-
     //Allows user to operate player object with arrow keys 
     //by calling on the event listener below.
     handleInput(input) {
@@ -127,9 +129,29 @@ class Player {
     }
 };
 
+//Win condition
+class Modal {
+    constructor(overlay) {
+        this.overlay = overlay;
+        const replayButton = overlay.querySelector('.button-replay')
+        replayButton.addEventListener('click', this.replay.bind(this));
+        overlay.addEventListener('click', e => {
+            if (e.srcElement.id === this.overlay.id) {
+                this.replay();
+            }
+        })
+    };
+    open(){
+        this.overlay.classList.remove('is-hidden');
+    }
+    replay() {
+        this.overlay.classList.add('is-hidden');
+
+    }
+
+}
 // Instantiate objects.
 const player = new Player('images/char-horn-girl.png', 200, 320);
-
 
 const enemy1 = new Enemy(-120, 55, 400);
 const enemy2 = new Enemy(-500, 55, 402);
@@ -142,14 +164,26 @@ const enemy6 = new Enemy(-120, 304, 290);
 const allEnemies = [];
 
 allEnemies.push(
-    enemy1,
-    enemy2,
-    enemy3,
-    enemy4,
-    enemy5,
+    //enemy1,
+    //enemy2,
+    //enemy3,
+    //enemy4,
+    //enemy5,
     enemy6,
     );
 
+/*
+let winner = false;
+const win = new Modal(document.querySelector('.modal-overlay'));
+window.openModal = modal.open.bind(modal);
+window.openModal();
+
+
+
+if (collisionCount === 3) {
+    gameOver();
+}
+*/
 // Listens for key presses and sends to Player.handleInput() method. 
 document.addEventListener('keyup', function(e) { 
     var allowedKeys = {
