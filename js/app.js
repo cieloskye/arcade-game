@@ -83,17 +83,11 @@ class Player {
     		}
         //Game Over Coditions
     	if(this.y === -28) {
+            const modal = document.querySelector('.modal');
     		modal.style.display = 'block';
-            
-            span.onclick = function() {
-            modal.style.display = "none";
-            this.reset();
-            }
-
-            
-
-        };     			
-    };
+            modal.classList.toggle('hidden');
+        } 
+    };     			
     //Allows user to operate player object with arrow keys 
     //by calling on the event listener below.
     handleInput(input) {
@@ -129,27 +123,12 @@ class Player {
     }
 };
 
-//Win condition
-class Modal {
-    constructor(overlay) {
-        this.overlay = overlay;
-        const replayButton = overlay.querySelector('.button-replay')
-        replayButton.addEventListener('click', this.replay.bind(this));
-        overlay.addEventListener('click', e => {
-            if (e.srcElement.id === this.overlay.id) {
-                this.replay();
-            }
-        })
-    };
-    open(){
-        this.overlay.classList.remove('is-hidden');
-    }
-    replay() {
-        this.overlay.classList.add('is-hidden');
+function winner(){
+        const modal = document.querySelector('.modal');
+        modal.classList.toggle('hidden');
+        player.reset();
+};
 
-    }
-
-}
 // Instantiate objects.
 const player = new Player('images/char-horn-girl.png', 200, 320);
 
@@ -173,13 +152,6 @@ allEnemies.push(
     );
 
 /*
-let winner = false;
-const win = new Modal(document.querySelector('.modal-overlay'));
-window.openModal = modal.open.bind(modal);
-window.openModal();
-
-
-
 if (collisionCount === 3) {
     gameOver();
 }
