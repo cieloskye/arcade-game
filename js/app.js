@@ -68,11 +68,12 @@ class Player {
       
     update(dt) { 
         for(let enemy of allEnemies) {
-			if(this.y === enemy.y) {
+			if(this.y === enemy.y && this.x === enemy.x) {
 				
 				console.log('Oh no!');
     		}
-    	//console.log(this.y, enemy.y);
+    	console.log('y', this.y, enemy.y);
+        console.log('x', this.x, enemy.x);
     	}
     	if(this.y === 55) {
     		console.log('You did it!');
