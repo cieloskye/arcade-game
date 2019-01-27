@@ -7,7 +7,8 @@ class Enemy {
         this.x = x;
         this.y = y;
         this.speed = speed; 
-        this.move = 101;
+        this.moveY = 101;
+        this.moveX = 83
         this.edge = this.move * 5; 
     };
 
@@ -27,9 +28,9 @@ class Enemy {
     };
     
     handleInput() { 
-        //if (this.x > 0) {
-            //this.x += this.move;
-        //}
+        if (this.x > 0) {
+            this.x += this.move;
+        }
 
     };
   
@@ -68,8 +69,10 @@ class Player {
     update(dt) { 
         for(let enemy of allEnemies) {
 			if(this.y === enemy.y) {
+				
 				console.log('Oh no!');
     		}
+    	//console.log(this.y, enemy.y);
     	}
     	if(this.y === 55) {
     		console.log('You did it!');
