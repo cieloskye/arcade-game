@@ -5,7 +5,7 @@ class Enemy {
     constructor (x, y, speed) { 
         this.sprite = 'images/enemy-bug.png';
         this.startX = x - 24;
-        this.startY = y + 4;
+        this.startY = y + 1;
         this.x = this.startX;
         this.y = this.startY;
         this.speed = speed; 
@@ -58,10 +58,12 @@ class Queen {
 class Player {
     constructor (sprite, x, y) { 
         this.sprite = sprite;
-        this.x = x;
-        this.y = y + 70;
         this.moveX = 101;
         this.moveY = 83;
+        this.startX = (this.moveX * 2);
+        this.startY = (this.moveY * 4) + 55;
+        this.x = this.startX;
+        this.y = this.startY;
     }; 
     //Creates Player object on canvas.
     render() {   
@@ -70,14 +72,14 @@ class Player {
       
     update(dt) { 
         for(let enemy of allEnemies) {
-			if(this.x === enemy.x) {  //this.y === enemy.y) { //&& this.x === enemy.x) {
+			if(this.y === enemy.y && this.x === enemy.x) {
 				
 				console.log('Oh no!');
     		}
     	console.log('y', this.y, enemy.y);
         console.log('x', this.x, enemy.x);
     	}
-    	if(this.y === 55) {
+    	if(this.y === -28) {
     		console.log('You did it!');
     	};
   			
@@ -102,12 +104,12 @@ class Player {
                 break;
             case 'left':
                 if (this.x > 0) {
-                    this.x -= this.move;
+                    this.x -= this.moveX;
                 }
                 break;
             case 'right':
-                if (this.x < this.move * 3) {
-                    this.x += this.move;
+                if (this.x < this.moveX * 4) {
+                    this.x += this.moveX;
                 }
         }
         
@@ -130,7 +132,7 @@ const enemy3 = new Enemy(-100, 135, 310);
 const enemy4 = new Enemy(-500, 135, 300);
 const enemy5 = new Enemy(-700, 225, 400);
 const enemy6 = new Enemy(-200, 303, 290);
-const enemy7 = new Enemy(-101, 390, 180);
+const enemy7 = new Enemy(-101, (this.startY * 2), 180);
 //const queen = new Queen(0, 50, 200);
 
 const allEnemies = [];
@@ -141,7 +143,7 @@ allEnemies.push(
    // enemy3,
    // enemy4,
    // enemy5,
-    //  enemy6,
+      enemy6,
     //enemy7
     );
 
