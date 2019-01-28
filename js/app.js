@@ -1,4 +1,4 @@
-// app.js
+'use strict;'
 //Special thanks to https://matthewcranford.com/ 
 //for helping me get unstuck on this.startX & this.startY.
 
@@ -122,6 +122,8 @@ class Player {
     reset() {
         this.x = this.startX;
         this.y = this.startY;
+        const modal = document.querySelector('.modal');
+        modal.style.display = 'none';
     }
 };
 
@@ -137,9 +139,9 @@ const player = new Player('images/char-horn-girl.png', 200, 320);
 
 const enemy1 = new Enemy(-120, 55, 400);
 const enemy2 = new Enemy(-500, 55, 402);
-const enemy3 = new Enemy(-100, 138, 310);
+const enemy3 = new Enemy(-100, 138, 350);
 const enemy4 = new Enemy(-500, 138, 300);
-const enemy5 = new Enemy(-300, 221, 400);
+const enemy5 = new Enemy(-300, 221, 300);
 const enemy6 = new Enemy(-120, 304, 290);
 //const queen = new Queen(0, 50, 200);
 
