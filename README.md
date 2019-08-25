@@ -1,4 +1,4 @@
-# Classic Arcade Game Clone Project
+# Arcade Game
 
 ## Table of Contents
 
